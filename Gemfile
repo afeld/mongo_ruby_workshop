@@ -6,3 +6,5 @@ gem 'guard-minitest'
 
 gem 'bson_ext'
 gem 'mongo'
+
+gem 'mongoid'

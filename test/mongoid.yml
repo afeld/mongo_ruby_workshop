@@ -1,0 +1,6 @@
+development:
+  sessions:
+    default:
+      database: mongo_ruby_demo
+      hosts:
+        - localhost:27017

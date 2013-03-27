@@ -1,9 +1,16 @@
 GEM
   remote: https://rubygems.org/
   specs:
+    activemodel (3.2.13)
+      activesupport (= 3.2.13)
+      builder (~> 3.0.0)
+    activesupport (3.2.13)
+      i18n (= 0.6.1)
+      multi_json (~> 1.0)
     bson (1.8.4)
     bson_ext (1.8.2)
       bson (~> 1.8.2)
+    builder (3.0.4)
     coderay (1.0.8)
     guard (1.6.2)
       listen (>= 0.6.0)
@@ -13,11 +20,20 @@ GEM
       thor (>= 0.14.6)
     guard-minitest (0.5.0)
       guard (>= 0.4)
+    i18n (0.6.1)
     listen (0.7.2)
     lumberjack (1.0.2)
     method_source (0.8.1)
     mongo (1.8.4)
       bson (~> 1.8.4)
+    mongoid (3.1.2)
+      activemodel (~> 3.2)
+      moped (~> 1.4.2)
+      origin (~> 1.0)
+      tzinfo (~> 0.3.22)
+    moped (1.4.4)
+    multi_json (1.7.2)
+    origin (1.0.11)
     pry (0.9.11.4)
       coderay (~> 1.0.5)
       method_source (~> 0.8)
@@ -26,6 +42,7 @@ GEM
     slop (3.4.3)
     terminal-table (1.4.5)
     thor (0.17.0)
+    tzinfo (0.3.37)
 
 PLATFORMS
   ruby
@@ -35,4 +52,5 @@ DEPENDENCIES
   guard
   guard-minitest
   mongo
+  mongoid
   rb-fsevent (~> 0.9.1)
