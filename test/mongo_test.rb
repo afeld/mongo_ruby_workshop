@@ -1,5 +1,5 @@
 require 'minitest/autorun'
-require_relative 'mongo_wrapper'
+require_relative '../mongo_wrapper'
 
 describe Mongo do
   mongo = MongoWrapper.new

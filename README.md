@@ -4,7 +4,7 @@ To get started, make sure that MongoDB 2.x is installed and running, and run:
 
 ```bash
 bundle install
-ruby load_data.rb
+bundle exec guard
 ```
 
 ## Reference
