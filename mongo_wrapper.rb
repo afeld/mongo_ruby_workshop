@@ -38,7 +38,6 @@ class MongoWrapper
     # remove the embedded data
     user = checkin.delete 'user'
     venue = checkin.delete 'venue'
-    # TODO distinguish 'id' from Foursquare
 
     user_id = self.db['users'].insert user
     venue_id = self.db['venues'].insert venue
