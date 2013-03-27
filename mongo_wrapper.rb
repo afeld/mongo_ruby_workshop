@@ -20,10 +20,14 @@ class MongoWrapper
   end
 
   def checkin_seed_data
-    # read in the dummy data
-    json_str = File.read('./data/checkins.json')
-    json = JSON.parse(json_str)
-    json['response']['recent']
+    unless @checkin_seed_data
+      # read in the dummy data
+      json_str = File.read('./data/checkins.json')
+      json = JSON.parse(json_str)
+      @checkin_seed_data = json['response']['recent']
+    end
+
+    @checkin_seed_data
   end
 
   def seed
@@ -54,7 +58,7 @@ class MongoWrapper
 end
 
 if __FILE__ == $0
-  # file being run directly
+  # file being run directly - reset the DB
   wrapper = MongoWrapper.new
   wrapper.clear
   wrapper.seed
