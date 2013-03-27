@@ -19,6 +19,7 @@ class MongoWrapper
     end
   end
 
+  # returns a cached copy
   def checkin_seed_data
     unless @checkin_seed_data
       # read in the dummy data
@@ -30,30 +31,34 @@ class MongoWrapper
     @checkin_seed_data
   end
 
-  def seed
-    users_coll = self.db['users']
-    venues_coll = self.db['venues']
-    checkins_coll = self.db['checkins']
+  def add_checkin(checkin)
+    # don't modify the hash
+    checkin = checkin.dup
 
+    # remove the embedded data
+    user = checkin.delete 'user'
+    venue = checkin.delete 'venue'
+    # TODO distinguish 'id' from Foursquare
+
+    user_id = self.db['users'].insert user
+    venue_id = self.db['venues'].insert venue
+
+    # reference those newly-created documents
+    checkin['user_id'] = user_id
+    checkin['venue_id'] = venue_id
+
+    self.db['checkins'].insert checkin
+  end
+
+  def seed
     checkins = self.checkin_seed_data
 
     checkins.each do |checkin|
-      # we don't want to keep the data embedded
-      user = checkin.delete 'user'
-      venue = checkin.delete 'venue'
-
-      user_id = users_coll.insert user
-      venue_id = venues_coll.insert venue
-
-      # reference those newly-created documents
-      checkin['user_id'] = user_id
-      checkin['venue_id'] = venue_id
-
-      checkins_coll.insert checkin
+      self.add_checkin checkin
     end
 
     # just a sanity check
-    raise "not all checkins loaded" unless checkins.size == checkins_coll.count
+    raise "not all checkins loaded" unless checkins.size == self.db['checkins'].count
   end
 end
 
