@@ -13,9 +13,13 @@ describe Mongo do
 
   describe 'participant' do
     it "should return the number of documents in the collection" do
-      db['checkins'].count.must_equal 10
-      db['users'].count.must_equal 10
-      db['venues'].count.must_equal 10
+      num_checkins = 'TODO'
+      num_users = 'TODO'
+      num_venues = 'TODO'
+      
+      num_checkins.must_equal 10
+      num_users.must_equal 10
+      num_venues.must_equal 10
     end
 
     it "should insert a new checkin" do
@@ -27,11 +31,12 @@ describe Mongo do
         shout: "just testing"
       }
 
-      checkin['user_id'] = user_id
+      # TODO assign the user_id
+
       # pick an arbitrary venue
       checkin['venue_id'] = db['venues'].find_one['id']
 
-      db['checkins'].insert checkin
+      # TODO insert the checkin
 
       db['checkins'].count.must_equal 11
       db['checkins'].find(user_id: user_id).count.must_equal 2
@@ -43,10 +48,11 @@ describe Mongo do
       user_id =  user_ids.first
       db['users'].update({_id: user_id}, {'$set' => {friend_ids: user_ids.last(2)}})
       #######################
+      
+      user = 'TODO - retrive using the user_id'
+      friend_ids = 'TODO - get the Array of friend_ids from the user'
+      checkins = 'TODO - retrieve the checkins using the friend_ids'
 
-      user = db['users'].find_one(_id: user_id)
-      friend_ids = user['friend_ids']
-      checkins = db['checkins'].find(user_id: {'$in' => friend_ids})
       checkins.count.must_equal 2
     end
   end

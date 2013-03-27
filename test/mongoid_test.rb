@@ -35,25 +35,28 @@ describe Mongoid do
 
   describe 'participant' do
     it "should return the number of documents in the collection" do
-      Checkin.all.size.must_equal 10
-      User.all.size.must_equal 10
-      Venue.all.size.must_equal 10
+      num_checkins = 'TODO'
+      num_users = 'TODO'
+      num_venues = 'TODO'
+      
+      num_checkins.must_equal 10
+      num_users.must_equal 10
+      num_venues.must_equal 10
     end
 
     it "should insert a new checkin with foreign keys" do
       user_id = User.first.id
-      # simplified checkin
-      checkin = Checkin.new(
+
+      # create a simplified checkin
+      checkin_data = {
         createdAt: Time.now.to_i,
         type: 'checkin',
-        shout: "just testing"
-      )
+        shout: "just testing",
 
-      checkin[:user_id] = user_id
-      # pick an arbitrary venue
-      checkin[:venue_id] = Venue.first.id
-
-      checkin.save!
+        user_id: user_id,
+        venue_id: 'TODO - pick an arbitrary venue'
+      }
+      checkin = 'TODO - create the Checkin'
 
       Checkin.all.size.must_equal 11
       Checkin.where(user_id: user_id).size.must_equal 2
@@ -62,22 +65,22 @@ describe Mongoid do
     it "should insert a new checkin and assign relations" do
       user = User.first
       # simplified checkin
-      checkin = Checkin.new(
+      checkin_data = {
         createdAt: Time.now.to_i,
         type: 'checkin',
         shout: "just testing"
-      )
+      }
+      checkin = 'TODO - create the Checkin'
 
-      checkin.user = user
-      # pick an arbitrary venue
-      checkin.venue = Venue.first
+      # TODO assign the User
+      # TODO assign a Venue
 
       checkin.save!
 
       Checkin.all.size.must_equal 11
       Checkin.where(user_id: user.id).size.must_equal 2
 
-      checkins = user.checkins
+      checkins = "TODO - retrieve the user's checkins"
       checkins.size.must_equal 2
       checkins.last.must_equal checkin
     end
