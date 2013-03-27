@@ -7,6 +7,8 @@ bundle install
 bundle exec guard
 ```
 
+You can also check out the [complete](https://github.com/afeld/mongo_ruby_workshop/tree/complete) demo.
+
 ## Reference
 
 * [CAP Theorem diagram](http://blog.beany.co.kr/wp-content/uploads/2011/03/nosql_cap.png)
