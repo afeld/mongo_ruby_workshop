@@ -1,3 +1,3 @@
 guard 'minitest' do
-  watch %r{\.rb$}
+  watch(%r{\.rb$}){ 'test' }
 end
