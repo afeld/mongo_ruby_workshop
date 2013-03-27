@@ -36,5 +36,18 @@ describe Mongo do
       db['checkins'].count.must_equal 11
       db['checkins'].find(user_id: user_id).count.must_equal 2
     end
+
+    it "should find the checkins of the user's friends" do
+      ## ignore this setup ##
+      user_ids = db['users'].distinct(:_id)
+      user_id =  user_ids.first
+      db['users'].update({_id: user_id}, {'$set' => {friend_ids: user_ids.last(2)}})
+      #######################
+
+      user = db['users'].find_one(_id: user_id)
+      friend_ids = user['friend_ids']
+      checkins = db['checkins'].find(user_id: {'$in' => friend_ids})
+      checkins.count.must_equal 2
+    end
   end
 end

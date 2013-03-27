@@ -10,6 +10,6 @@ bundle exec guard
 ## Reference
 
 * [MongoDB Manual](http://docs.mongodb.org/manual/)
-* [Mongo rdoc](http://rubydoc.info/gems/mongo/1.8.4/frames)
+* [Mongo gem rdoc](http://rubydoc.info/gems/mongo/1.8.4/frames)
 * [Mongoid homepage](http://mongoid.org/)
-* [Mongoid rdoc](http://rubydoc.info/gems/mongoid/3.1.2/frames)
+* [Mongoid gem rdoc](http://rubydoc.info/gems/mongoid/3.1.2/frames)
