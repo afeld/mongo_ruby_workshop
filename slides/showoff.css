@@ -1,0 +1,53 @@
+#preso,
+.slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: auto;
+  height: auto;
+  overflow: auto;
+
+  background-color: rgb(3, 24, 41);
+  color: #eee;
+}
+
+pre.sh_sourceCode {
+  font-size: 2.5em;
+  line-height: 1.5em;
+  padding: 1em;
+}
+
+code {
+  color: black;
+  padding: 0.1em 0.4em;
+}
+
+h1 {
+  color: rgb(250, 250, 68);
+}
+
+h2 {
+  padding-left: 40px;
+  font-weight: bold;
+  text-align: left;
+  color: rgb(245, 59, 0);
+}
+
+a {
+  text-decoration: none;
+  color: rgb(50, 189, 255);
+}
+a:hover {
+  text-decoration: underline;
+}
+
+.slide {
+  padding-bottom: 6em;
+}
+
+
+.content > p {
+  font-size: 48px;
+}
