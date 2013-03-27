@@ -8,7 +8,7 @@ Sẽnor Web Developer, [Jux](https://jux.com)
 
 Download/clone/fork @
 
-[github.com/afeld/mongo_ruby_workshop](https://github.com/afeld/mongo_ruby_workshop)
+[github.com/afeld/mongo\_ruby\_workshop](https://github.com/afeld/mongo_ruby_workshop)
 
 !SLIDE
 
@@ -47,6 +47,7 @@ Download/clone/fork @
 * Embedded lists
 * Embedded documents
 * Simple STI
+* *It's just JSON++*
 
 !SLIDE
 
@@ -63,3 +64,19 @@ Download/clone/fork @
 * *FAST*
 * Atomic operations
 * No injection worries
+
+!SLIDE
+
+# do it live
+
+!SLIDE
+
+# Fin
+
+Aidan Feldman
+
+Sẽnor Web Developer, [Jux](https://jux.com)
+
+[@aidanfeldman](https://twitter.com/aidanfeldman)
+
+[api.afeld.me](http://api.afeld.me)
