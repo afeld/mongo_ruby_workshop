@@ -63,7 +63,7 @@ Download/clone/fork @
 
 * *FAST*
 * Atomic operations
-* No injection worries
+* No injection worries (http://xkcd.com/327/)
 
 !SLIDE
 
