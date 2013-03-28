@@ -64,6 +64,7 @@ describe Mongoid do
 
     it "should insert a new checkin and assign relations" do
       user = User.first
+
       # simplified checkin
       checkin_data = {
         createdAt: Time.now.to_i,

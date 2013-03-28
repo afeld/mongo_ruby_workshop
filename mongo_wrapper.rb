@@ -36,8 +36,13 @@ class MongoWrapper
     checkin = checkin.dup
 
     # remove the embedded data
-    user = checkin.delete 'user'
-    venue = checkin.delete 'venue'
+    user = checkin.delete('user').dup
+    venue = checkin.delete('venue').dup
+
+    # remove Foursquare-provided IDs, to be less confusing
+    checkin.delete('id')
+    user.delete('id')
+    venue.delete('id')
 
     user_id = self.db['users'].insert user
     venue_id = self.db['venues'].insert venue
