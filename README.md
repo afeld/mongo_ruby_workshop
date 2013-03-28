@@ -9,6 +9,7 @@ bundle exec guard
 
 ## Reference
 
+* [CAP Theorem diagram](http://blog.beany.co.kr/wp-content/uploads/2011/03/nosql_cap.png)
 * [MongoDB Manual](http://docs.mongodb.org/manual/)
 * [Mongo gem rdoc](http://rubydoc.info/gems/mongo/1.8.4/frames)
 * [Mongoid homepage](http://mongoid.org/)
