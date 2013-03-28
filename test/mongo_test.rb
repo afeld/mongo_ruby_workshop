@@ -29,7 +29,7 @@ describe Mongo do
 
       checkin['user_id'] = user_id
       # pick an arbitrary venue
-      checkin['venue_id'] = db['venues'].find_one['id']
+      checkin['venue_id'] = db['venues'].find_one['_id']
 
       db['checkins'].insert checkin
 
