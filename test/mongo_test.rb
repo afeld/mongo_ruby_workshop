@@ -19,7 +19,9 @@ describe Mongo do
     end
 
     it "should insert a new checkin" do
+      # pick arbitrary user
       user_id = db['users'].find_one['_id']
+
       # simplified checkin
       checkin = {
         createdAt: Time.now.to_i,
@@ -27,9 +29,9 @@ describe Mongo do
         shout: "just testing"
       }
 
-      checkin['user_id'] = user_id
+      checkin[:user_id] = user_id
       # pick an arbitrary venue
-      checkin['venue_id'] = db['venues'].find_one['_id']
+      checkin[:venue_id] = db['venues'].find_one['_id']
 
       db['checkins'].insert checkin
 

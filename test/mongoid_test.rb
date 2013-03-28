@@ -42,6 +42,7 @@ describe Mongoid do
 
     it "should insert a new checkin with foreign keys" do
       user_id = User.first.id
+
       # simplified checkin
       checkin = Checkin.new(
         createdAt: Time.now.to_i,
@@ -61,6 +62,7 @@ describe Mongoid do
 
     it "should insert a new checkin and assign relations" do
       user = User.first
+
       # simplified checkin
       checkin = Checkin.new(
         createdAt: Time.now.to_i,
