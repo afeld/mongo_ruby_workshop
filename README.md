@@ -1,13 +1,36 @@
 # MongoDB + Ruby Workshop
 
-To get started, make sure that MongoDB 2.x is installed and running, and run:
+## Contents
 
-```bash
+* [Slides](https://github.com/afeld/mongo_ruby_workshop/blob/complete/slides/README.md)
+* [Exercise files](https://github.com/afeld/mongo_ruby_workshop/tree/complete/test) (disguised as tests)
+
+## Get Started
+
+Make sure that MongoDB 2.x is installed and running, and run:
+
+```
 bundle install
+ruby mongo_wrapper.rb
+mongo
+```
+
+If your database is properly started, you will now be in the MongoDB shell.  Now, within the shell, try the following commands to ensure the data is seeding properly:
+
+```
+> use mongo_ruby_demo;
+switched to db mongo_ruby_demo
+> db.users.count();
+10
+```
+
+Great!  You can take a look through [`mongo_wrapper.rb`](https://github.com/afeld/mongo_ruby_workshop/blob/boilerplate/mongo_wrapper.rb) to get a sense of how the database is being populated.  Now, we want to work through our exercises in the [`tests/` directory](https://github.com/afeld/mongo_ruby_workshop/tree/boilerplate/test).  Start up [Guard](https://github.com/guard/guard) to have them run automatically when you modify any Ruby files:
+
+```
 bundle exec guard
 ```
 
-You can also check out the [complete](https://github.com/afeld/mongo_ruby_workshop/tree/complete) demo.
+You can also check out the [complete](https://github.com/afeld/mongo_ruby_workshop/tree/complete/test) versions, for reference.
 
 ## Reference
 
