@@ -5,23 +5,7 @@ require_relative '../mongo_wrapper'
 Mongoid.load! File.join(File.dirname(__FILE__), 'mongoid.yml'), :development
 
 
-# define the models
-
-class Checkin
-  include Mongoid::Document
-  belongs_to :user
-  belongs_to :venue
-end
-
-class User
-  include Mongoid::Document
-  has_many :checkins
-end
-
-class Venue
-  include Mongoid::Document
-  has_many :checkins
-end
+# TODO define the models for User, Venue and Checkin
 
 
 describe Mongoid do
