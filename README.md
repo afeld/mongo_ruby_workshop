@@ -24,13 +24,13 @@ switched to db mongo_ruby_demo
 10
 ```
 
-Great!  You can take a look through [`mongo_wrapper.rb`](https://github.com/afeld/mongo_ruby_workshop/blob/boilerplate/mongo_wrapper.rb) to get a sense of how the database is being populated.  Now, we want to work through our exercises in the [`tests/` directory](https://github.com/afeld/mongo_ruby_workshop/tree/boilerplate/test).  Start up [Guard](https://github.com/guard/guard) to have them run automatically when you modify any Ruby files:
+Great!  You can take a look through [`mongo_wrapper.rb`](https://github.com/afeld/mongo_ruby_workshop/blob/boilerplate/mongo_wrapper.rb) to get a sense of how the database is being populated.  Now, we want to work through our exercises in the [`tests/` directory](https://github.com/afeld/mongo_ruby_workshop/tree/boilerplate/test) - look for the `TODO`s.  Start up [Guard](https://github.com/guard/guard) to have them run automatically when you modify any Ruby files:
 
 ```
 bundle exec guard
 ```
 
-You can also check out the [complete](https://github.com/afeld/mongo_ruby_workshop/tree/complete/test) versions, for reference.
+Now have at it!  You can also check out the [complete](https://github.com/afeld/mongo_ruby_workshop/tree/complete/test) versions, if you need a reference.
 
 ## Reference
 
